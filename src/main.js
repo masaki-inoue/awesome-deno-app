@@ -1,6 +1,6 @@
 import { listenAndServe } from "https://deno.land/std@0.50.0/http/server.ts"
 
-const port = 7000
+const port = 8000
 const httpOptions = { port }
 
 listenAndServe(httpOptions, handler)
@@ -8,7 +8,6 @@ listenAndServe(httpOptions, handler)
 console.log(`http://localhost:${port}/`)
 
 function handler(req) {
-  console.log({ req, url: req.url, method: req.method })
   switch(req.url) {
     case '/favicon.ico':
       faviconHandler(req)
